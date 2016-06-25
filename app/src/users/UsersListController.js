@@ -6,7 +6,7 @@
     
     angular
     .module('users')
-    .controller('UserController', ['userService', '$mdSidenav', '$mdButtonSheet', '$timeout', '$log', UserController]);
+    .controller('UserController', ['userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', UserController]);
     
     
     /*
