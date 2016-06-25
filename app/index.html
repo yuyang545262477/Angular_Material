@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
+</head>
+<body ng-app="starterApp" layout="column">
+
+<!--container #1 -->
+<md-toolbar layout="row">
+    <h1>Angular Material Start Demo</h1>
+</md-toolbar>
+
+<!--container 2-->
+
+<div flex layout="row">
+    <!--container 3-->
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+        sidenav
+    </md-sidenav>
+    <!--container 4-->
+    <md-content flex id="content">
+        content
+    </md-content>
+
+</div>
+
+<script src="../node_modules/angular/angular.js" type="text/javascript"></script>
+<script src="../node_modules/angular-animate/angular-animate.js" type="text/javascript"></script>
+<script src="../node_modules/angular-aria/angular-aria.js" type="text/javascript"></script>
+<script src="../node_modules/angular-material/angular-material.js" type="text/javascript"></script>
+
+<script>
+    // Include the dependency upon ngMaterial - important !!
+    angular.module('starterApp', ['ngMaterial']);
+</script>
+</body>
+</html>
