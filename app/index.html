@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title> Angular Material Demo</title>
+    <meta name="viewport" content="initial-scale=1"/>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="assets/app.css"/>
     <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
 </head>
 <body ng-app="starterApp" layout="column">
@@ -17,11 +20,26 @@
 <div flex layout="row">
     <!--container 3-->
     <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
-        sidenav
+        <md-list>
+            <md-list-item>
+                <md-button>
+                    <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="md-avatar"></md-icon>
+                    Lia Luogo
+                </md-button>
+            </md-list-item>
+            <md-list-item>
+                <md-button>
+                    <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="md-avatar"></md-icon>
+                    Lawrence Ray
+                </md-button>
+            </md-list-item>
+        </md-list>
     </md-sidenav>
     <!--container 4-->
     <md-content flex id="content">
-        content
+        <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avater"></md-icon>
+        <h1> Lia Luogo</h1>
+        <p>I love something...</p>
     </md-content>
 
 </div>
@@ -33,7 +51,10 @@
 
 <script>
     // Include the dependency upon ngMaterial - important !!
-    angular.module('starterApp', ['ngMaterial']);
+    angular.module('starterApp', ['ngMaterial'])
+    .run(function ($log) {
+        $log.debug('angular material is running');
+    });
 </script>
 </body>
 </html>
