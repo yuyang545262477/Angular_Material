@@ -6,7 +6,7 @@
     
     angular
     .module('users')
-    .controller('UserController', ['userService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log', UserController]);
+    .controller('UserController', ['userService', '$mdSidenav', '$mdBottomSheet', UserController]);
     
     
     /*
@@ -17,7 +17,7 @@
      * @constructor
      * */
     
-    function UserController(userService, $mdSidenav, $mdBottomSheet, $timeout, $log) {
+    function UserController(userService, $mdSidenav, $mdBottomSheet) {
         var self = this;
         
         self.selected = null;
@@ -64,11 +64,9 @@
         function makeContact(selectedUser) {
             $mdBottomSheet.show({
                 controllerAs: 'vm',
-                templateUrl: './src/users/view/contactSheet.html',
                 controller: ['$mdBottomSheet', ContactSheetController],
+                templateUrl: './src/users/view/contactSheet.html',
                 parent: angular.element(document.getElementById('content'))
-            }).then(function (clickedItem) {
-                $log.debug(clickedItem.name + ' clicked!');
             });
             
             
