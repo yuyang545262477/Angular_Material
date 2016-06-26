@@ -12,9 +12,14 @@
 
 <!--container #1 -->
 <md-toolbar layout="row">
-    <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()">
+    <md-button class="menu"
+               hide-gt-sm
+               ng-click="ul.toggleList()"
+               aria-label="Show User List"
+    >
         <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
+    <h3>Angular Material Demo</h3>
 </md-toolbar>
 
 <!--container 2-->
@@ -27,7 +32,9 @@
     >
         <md-list>
             <md-list-item ng-repeat="u in ul.users">
-                <md-button ng-click="ul.selectUser(u)" ng-class="{'selected':u === ul.selected}">
+                <md-button ng-click="ul.selectUser(u)"
+                           ng-class="{'selected':u === ul.selected}"
+                >
                     <md-icon md-svg-icon="{{ u.avatar }}" class="avatar"></md-icon>
                     {{ u.name }}
                 </md-button>
@@ -41,7 +48,9 @@
         <p>{{ ul.selected.content }}</p>
 
 
-        <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)">
+        <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)"
+                   aria-label="Share with {{ ul.selected.name }}"
+        >
             <md-icon md-svg-icon="share"></md-icon>
         </md-button>
     </md-content>
@@ -62,7 +71,7 @@
 <script>
     // Include the dependency upon ngMaterial - important !!
     angular.module('starterApp', ['ngMaterial', 'users'])
-    .config(function ($mdIconProvider) {
+    .config(function ($mdIconProvider, $mdThemingProvider) {
         $mdIconProvider
         .defaultIconSet("./assets/svg/avatars.svg", 128)
         .icon("share", "./assets/svg/share.svg", 24)
@@ -71,6 +80,11 @@
         .icon("twitter", "./assets/svg/twitter.svg", 512)
         .icon("phone", "./assets/svg/phone.svg", 512)
         .icon("menu", "./assets/svg/menu.svg", 24);
+
+        $mdThemingProvider
+        .theme('default')
+        .primaryPalette('brown')
+        .accentPalette('red');
     })
 </script>
 </body>
